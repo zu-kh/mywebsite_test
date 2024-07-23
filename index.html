@@ -3,82 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حبي لك</title>
+    <title>صفحة الحب</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
-            color: #333;
+            font-family: 'Arial', sans-serif;
+            background: url('https://www.w3schools.com/w3images/rose.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
             text-align: center;
             margin: 0;
             padding: 0;
-            direction: rtl; /* لإظهار النص من اليمين لليسار */
         }
-        header {
-            background-color: #ff6f61;
-            color: white;
+        .container {
+            background: rgba(0, 0, 0, 0.7);
             padding: 20px;
-        }
-        .content {
-            padding: 30px;
-            background-color: #fff;
-            border-radius: 8px;
-            margin: 20px auto;
+            border-radius: 10px;
             max-width: 800px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 50px auto;
         }
         h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        h2 {
-            color: #ff6f61;
+            font-size: 2.8em;
+            margin-bottom: 20px;
         }
         p {
             font-size: 1.2em;
             line-height: 1.6;
-        }
-        .image-container {
             margin: 20px 0;
         }
-        img {
+        .heart {
+            font-size: 4em;
+            color: red;
+            margin: 20px 0;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #fff;
+        }
+        .footer a {
+            color: #ff9999;
+            text-decoration: none;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        .image-gallery img {
             width: 100%;
             height: auto;
-            border-radius: 8px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border: 5px solid #fff;
         }
-        footer {
-            background-color: #ff6f61;
-            color: white;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+        .love-letter {
+            background: rgba(255, 255, 255, 0.9);
+            color: #000;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>إلى حبيبي/حبيبتي</h1>
-    </header>
-
-    <div class="content">
-        <div class="image-container">
-            <img src="https://via.placeholder.com/800x400?text=حب" alt="صورة رومانسية">
+    <div class="container">
+        <h1>أحبك أكثر من أي وقت مضى</h1>
+        <div class="heart">&#10084;&#65039;</div>
+        
+        <div class="image-gallery">
+            <img src="https://www.w3schools.com/w3images/lights.jpg" alt="Romantic Lights">
+            <img src="https://www.w3schools.com/w3images/forest.jpg" alt="Romantic Forest">
         </div>
-        <h2>ايلاف</h2>
-        <p>
-            منذ اللحظة التي التقينا فيها، جلبتَ فرحًا ودفئًا لا يضاهى إلى حياتي. كل يوم أقضيه معك هو هدية ثمينة، وحبي لك ينمو أعمق مع كل لحظة تمر.
-        </p>
-        <p>
-            ابتسامتك تضيء أيامي المظلمة، ولمستك تهدئ همومي. أنا ممتن لكل ضحكة، وكل عناق، وكل حلم مشترك بيننا. أنت صخرتي، ومستشاري، وأعظم مغامرة لي.
-        </p>
-        <p>
-            أتطلع إلى المزيد من السنوات المليئة بالضحك، والحب، والذكريات التي لا تُنسى معك. أنت كل شيء بالنسبة لي، وأعدك أن أحبك أكثر مع كل نبضة قلب.
-        </p>
+        
+        <div class="love-letter">
+            <p>عزيزتي أيلاف,</p>
+            <p>كل لحظة تقضيها بجانبي هي هدية من السماء. أحبك بقدر ما في الكون من نجوم وبقدر ما في البحر من أمواج.</p>
+            <p>أنت السبب في سعادتي وابتسامتي، وعندما أكون بجانبك، أشعر وكأنني أعيش في حلم جميل. كل يوم معك هو مغامرة جديدة، وأتمنى أن نستمر في هذا الطريق الطويل معًا.</p>
+            <p>أعدك أنني سأظل أحبك وأعتني بك، وسأظل هنا لأشاركك كل لحظة، سواء كانت فرحة أو تحديًا.</p>
+            <p>بك، كل شيء يبدو أكثر جمالًا، وكل لحظة هي فرصة جديدة لأحبك فيها أكثر. شكرًا لكونك في حياتي، ولحبك الذي يملأ قلبي بالسعادة.</p>
+            <p>مع كل حبي واهتمامي، <br> زوووز</p>
+        </div>
+        
+        <div class="footer">
+            <p><a href="">حبوبي زعبوبي دبوبي</a></p>
+        </div>
     </div>
-
-    <footer>
-        <p>&copy; 2024 قلبي ملك لك</p>
-    </footer>
 </body>
 </html>
