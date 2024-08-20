@@ -6,84 +6,276 @@
     <title>صفحة الحب</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background: url('https://www.w3schools.com/w3images/rose.jp') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
-            text-align: center;
             margin: 0;
-            padding: 0;
+            overflow: hidden;
+            background: #ffeef2; /* Light pink background */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #333;
+            position: relative;
         }
-        .container {
-            background: rgba(0, 0, 0, 0.7);
+
+        .header {
             padding: 20px;
-            border-radius: 10px;
-            max-width: 800px;
-            margin: 50px auto;
+            background: #ff6f91; /* Soft pink */
+            color: white;
+            font-size: 2em;
+            border-bottom: 5px solid #ff3f7f; /* Darker pink */
         }
-        h1 {
-            font-size: 2.8em;
-            margin-bottom: 20px;
+
+        .content {
+            padding: 50px 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            max-width: 600px;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        p {
+
+        .content h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        .content p {
             font-size: 1.2em;
             line-height: 1.6;
-            margin: 20px 0;
         }
-        .heart {
-            font-size: 4em;
-            color: red;
-            margin: 20px 0;
+
+        .butterfly-wrapper {
+            position: absolute;
+            width: 100px;
+            height: 100px;
         }
-        .footer {
-            margin-top: 20px;
-            font-size: 1.2em;
-            color: #fff;
+
+        .butterfly-wrapper .leftwings,
+        .butterfly-wrapper .rightwings {
+            position: absolute;
+            width: 50%;
+            height: 100%;
+            top: 0;
         }
-        .footer a {
-            color: #ff9999;
-            text-decoration: none;
+
+        .butterfly-wrapper .leftwings {
+            left: 0;
         }
-        .footer a:hover {
-            text-decoration: underline;
+
+        .butterfly-wrapper .rightwings {
+            right: 0;
         }
-        .image-gallery img {
+
+        .butterfly-wrapper .perspective {
+            position: relative;
             width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin: 10px 0;
-            border: 5px solid #fff;
+            height: 50%;
+            perspective: 150px;
+            perspective-origin: 50% 50%;
         }
-        .love-letter {
-            background: rgba(255, 255, 255, 0.9);
-            color: #000;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
+
+        .butterfly-wrapper .upperwing,
+        .butterfly-wrapper .lowerwing {
+            background: radial-gradient(ellipse at center, #ff6f91 0%, #ffb3b3 50%, #ff6f91 100%);
+            animation-duration: 0.3s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        .butterfly-wrapper .upperwing {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .butterfly-wrapper .upperwing_left {
+            border-top-left-radius: 10%;
+            border-top-right-radius: 80%;
+            border-bottom-right-radius: 0%;
+            border-bottom-left-radius: 30%;
+            transform-origin: 100% 50%;
+            animation-name: movewing_left;
+        }
+
+        .butterfly-wrapper .upperwing_right {
+            border-top-left-radius: 80%;
+            border-top-right-radius: 10%;
+            border-bottom-right-radius: 30%;
+            border-bottom-left-radius: 0%;
+            transform-origin: 0% 50%;
+            animation-name: movewing_right;
+        }
+
+        .butterfly-wrapper .lowerwing {
+            position: absolute;
+            top: 0;
+            width: 80%;
+            height: 80%;
+        }
+
+        .butterfly-wrapper .lowerwing_left {
+            right: 0;
+            border-top-left-radius: 30%;
+            border-top-right-radius: 0%;
+            border-bottom-right-radius: 80%;
+            border-bottom-left-radius: 10%;
+            transform-origin: 100% 50%;
+            animation-name: movewing_left;
+        }
+
+        .butterfly-wrapper .lowerwing_right {
+            left: 0;
+            border-top-left-radius: 0%;
+            border-top-right-radius: 30%;
+            border-bottom-right-radius: 10%;
+            border-bottom-left-radius: 80%;
+            transform-origin: 0% 50%;
+            animation-name: movewing_right;
+        }
+
+        @keyframes movewing_left {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(65deg); }
+        }
+
+        @keyframes movewing_right {
+            from { transform: rotateY(0deg); }
+            to { transform: rotateY(-65deg); }
+        }
+
+        @keyframes flutter {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(calc(100vw - 100px), calc(50vh - 100px)) rotate(90deg); }
+            50% { transform: translate(calc(50vw - 100px), calc(100vh - 100px)) rotate(180deg); }
+            75% { transform: translate(calc(0vw - 100px), calc(50vh - 100px)) rotate(270deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+
+        .butterfly1 { animation: flutter 10s infinite; }
+        .butterfly2 { animation: flutter 12s infinite; }
+        .butterfly3 { animation: flutter 14s infinite; }
+        .butterfly4 { animation: flutter 16s infinite; }
+
+        .heart {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: #ff3f7f;
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+            transform: rotate(-45deg);
+            animation: heartbeat 1s infinite;
+        }
+
+        .heart:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            background: #ff6f91;
+        }
+
+        .heart:nth-child(3) {
+            width: 150px;
+            height: 150px;
+            background: #ff9aa2;
+        }
+
+        .heart:nth-child(4) {
+            width: 180px;
+            height: 180px;
+            background: #ffb3b3;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1) rotate(-45deg);
+            }
+            50% {
+                transform: scale(1.2) rotate(-45deg);
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>أحبك أكثر من أي وقت مضى</h1>
-        <div class="heart">&#10084;&#65039;</div>
-        
-        <div class="image-gallery">
-            <img src="https://img.freepik.com/free-photo/3d-silhouette-loving-couple-against-tropical-sunset-landscape_1048-8905.jpg" alt="Heart">
-            <img src="https://img.freepik.com/premium-photo/heart-shaped-chocolate-candies-red-blue-neon-light-valentines-day-concept_1137115-863.jpg" alt="Love">
+    <div class="header">
+        أحبك من كل قلبي
+    </div>
+    <div class="content">
+        <h1>إلى ببوشة الغالية</h1>
+        <p>
+            منذ اللحظة التي دخلتي فيها حياتي، تغير كل شيء إلى الأفضل. أنتي نجم في سماء حياتي، وبدونك لن أستطيع تصور الحياة. 
+            أحبك أكثر من الكلمات، وأتمنى أن نكون معًا إلى الأبد. شكراً لك على كل لحظة جميلة تشاركيها معي.
+			
+			مع كامل الحب و الاحترام
+        </p>
+    </div>
+    
+    <div class="butterfly-wrapper butterfly1">
+        <div class="leftwings">
+            <div class="perspective">
+                <div class="upperwing upperwing_left"></div>
+            </div>
+            <div class="perspective">
+                <div class="lowerwing lowerwing_left"></div>
+            </div>
         </div>
-        
-        <div class="love-letter">
-            <p>حبيبتي ببوش,</p>
-            <p>كل لحظة أقضيها معك هي بمثابة جنة. حبك يجعلني أعيش في عالم مليء بالسعادة والنور. أنت نجم يضيء حياتي ويجعل كل يوم مليء بالبهجة والمرح.</p>
-            <p>أشعر بأننا خلقنا لنكون معًا، وأنك نصف روحي الذي طالما بحثت عنه. وجودك بجانبي يجعل الحياة أجمل وأحلامي أكثر وضوحًا. معك، أرى المستقبل مليئًا بالحب والفرح.</p>
-            <p>أعدك أنني سأظل بجانبك دومًا، وسأكون لك السند والدعم في كل المواقف. حبي لك لا ينتهي، وسيظل ينمو ويزدهر مع مرور الأيام.</p>
-            <p>أنت السبب في ابتسامتي وفي كل لحظة سعادة أعيشها. شكرًا لك على كل شيء، وشكرًا لأنك جزء من حياتي.</p>
-            <p>مع كل الحب والشوق، <br>Zoooooz</p>
+        <div class="rightwings">
+            <div class="perspective">
+                <div class="upperwing upperwing_right"></div>
+            </div>
+            <div class="perspective">
+                <div class="lowerwing lowerwing_right"></div>
+            </div>
         </div>
-        
-        <div class="footer">
-            <p><a href="mailto:youremail@example.com">ببوش الحبوش الفرفوش</a></p>
+    </div>
+    <div class="butterfly-wrapper butterfly2">
+        <div class="leftwings">
+            <div class="perspective">
+                <div class="upperwing upperwing_left"></div>
+            </div>
+            <div class="perspective">
+                <div class="lowerwing lowerwing_left"></div>
+            </div>
+        </div>
+        <div class="rightwings">
+            <div class="perspective">
+                <div class="upperwing upperwing_right"></div>
+            </div>
+            <div class="perspective">
+                <div class="lowerwing lowerwing_right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="butterfly-wrapper butterfly3">
+        <div class="leftwings">
+            <div class="perspective">
+                <div class="upperwing upperwing_left"></div>
+            </div>
+            <div class="perspective">
+                <div class="lowerwing lowerwing_left"></div>
+            </div>
+        </div>
+        <div class="rightwings">
+            <div class="perspective">
+                <div class="upperwing upperwing_right"></div>
+            </div>
+            <div class="perspective">
+                <div class="lowerwing lowerwing_right"></div>
+            </div>
+        </div>
+    </div>
+    <div class="butterfly-wrapper butterfly4">
+        <div class="leftwings">
+            <div class="perspective">
+                <div class="upperwing upperwing_left"></div>
+            </div>
+            <div class="perspective">
+                <div class="lowerwing lowerwing_left"></div>
+            </div>
+        </div>
+        <div class="rightwings">
+            <div class="perspective">
+                <div class="upperwing upperwing_right"></div>
+            </div>
+            <div class="perspective">
+                <div class="lowerwing lowerwing_right"></div>
+            </div>
         </div>
     </div>
 </body>
