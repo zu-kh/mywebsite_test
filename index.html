@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>صفحة الحب</title>
     <style>
+		
         body {
             margin: 0;
             overflow: hidden;
@@ -51,6 +52,7 @@
             position: absolute;
             width: 100px;
             height: 100px;
+			opacity: 0.9;
         }
 
         .butterfly-wrapper .leftwings,
@@ -59,6 +61,7 @@
             width: 50%;
             height: 100%;
             top: 0;
+			opacity: 0.9;
         }
 
         .butterfly-wrapper .leftwings {
@@ -158,65 +161,24 @@
         .butterfly2 { animation: flutter 12s infinite; }
         .butterfly3 { animation: flutter 14s infinite; }
         .butterfly4 { animation: flutter 16s infinite; }
-
+		
+        body {
+            margin: 0;
+            overflow: hidden; /* Prevent scrollbars from appearing */
+        }
         .heart {
             position: absolute;
-            width: 100px;
-            height: 100px;
-            background: #ff3f7f;
-            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-            transform: rotate(-45deg);
-            animation: heartbeat 1s infinite;
+            color: red;
+            font-size: 10px; /* Minimum size */
+            opacity: 0; /* Start invisible */
+            transition: opacity 1s ease-in, transform 1s ease-in; /* Transition for fade-in and movement */
         }
-
-        .heart:nth-child(2) {
-            width: 120px;
-            height: 120px;
-            background: #ff6f91;
-        }
-
-        .heart:nth-child(3) {
-            width: 150px;
-            height: 150px;
-            background: #ff9aa2;
-        }
-
-        .heart:nth-child(4) {
-            width: 180px;
-            height: 180px;
-            background: #ffb3b3;
-        }
-
-        @keyframes heartbeat {
-            0%, 100% {
-                transform: scale(1) rotate(-45deg);
-            }
-            50% {
-                transform: scale(1.2) rotate(-45deg);
-            }
-        }
+    
     </style>
 </head>
 <body>
     <!-- Glowing Header -->
-    <div class="header glow">أحبك من كل قلبي</div>
-
-    <div class="content">
-        <h1 class="glow">معًا في كل الظروف</h1>
-        <p class="glow">
-            أحبك ليس فقط لما أنت عليه، ولكن لكل ما أستطيع أن أكونه عندما أكون معك. في كل لحظة من حياتنا، نحن معًا، سواء كانت الأوقات جميلة أو مليئة بالتحديات
-            <br><br>
-            عندما نكون معًا، تضيء الدنيا من حولنا. كل ابتسامة منك تجعل قلبي يدق أسرع، وكل ضحكة لك هي موسيقى تعزف في أذني. لنحتفل بكل لحظة جميلة نعيشها، فكل لحظة تحمل في طياتها وعدًا جديدًا بحب أكبر وأعمق.
-			<br><br>
-			لكن الحياة ليست دائمًا سهلة. هناك لحظات من الحزن والقلق. ولكنني أعدك، مهما كانت الظروف، سأكون دائمًا بجانبك. سنواجه كل تحدٍ معًا، ونتخطى كل صعوبة بقوة حبنا. لنذهب إلى كل مصاعبنا معًا، يدًا بيد، قلبًا بقلب.
-			<br><br>
-			كل تحدٍ هو فرصة للنمو. سنبني أحلامنا معًا، وسنصنع ذكريات جديدة. في الأوقات الصعبة، سأتذكر دائمًا أننا معًا، وأن حبنا هو النور الذي يرشدنا في الظلام. سأكون دائمًا هنا لتشجيعك، ودعمك، ولأخبرك أن كل شيء سيكون على ما يرام.
-			<br><br>
-			دعنا نواصل هذا الطريق معًا، لنصنع قصة حب لا تُنسى. لنواجه العالم بشجاعة، ولنجعل من كل لحظة معًا كنزًا. مهما كانت الظروف، نحن معًا، وأنا ممتن لكل لحظة نقضيها معًا.
-			</p>
-    </div>
-    
-    <div class="butterfly-wrapper butterfly1">
+	<div class="butterfly-wrapper butterfly1">
         <div class="leftwings">
             <div class="perspective">
                 <div class="upperwing upperwing_left"></div>
@@ -288,181 +250,106 @@
             </div>
         </div>
     </div>
-	<script>
-var colours = ['#f00', '#f06', '#f0f', '#f6f', '#f39', '#f9c'];
+    <div class="content">
+        <h1 class="glow">معًا في كل الظروف</h1>
+        <p class="glow">
+            أحبك ليس فقط لما أنت عليه، ولكن لكل ما أستطيع أن أكونه عندما أكون معك. في كل لحظة من حياتنا، نحن معًا، سواء كانت الأوقات جميلة أو مليئة بالتحديات
+            <br><br>
+            عندما نكون معًا، تضيء الدنيا من حولنا. كل ابتسامة منك تجعل قلبي يدق أسرع، وكل ضحكة لك هي موسيقى تعزف في أذني. لنحتفل بكل لحظة جميلة نعيشها، فكل لحظة تحمل في طياتها وعدًا جديدًا بحب أكبر وأعمق.
+			<br><br>
+			لكن الحياة ليست دائمًا سهلة. هناك لحظات من الحزن والقلق. ولكنني أعدك، مهما كانت الظروف، سأكون دائمًا بجانبك. سنواجه كل تحدٍ معًا، ونتخطى كل صعوبة بقوة حبنا. لنذهب إلى كل مصاعبنا معًا، يدًا بيد، قلبًا بقلب.
+			<br><br>
+			كل تحدٍ هو فرصة للنمو. سنبني أحلامنا معًا، وسنصنع ذكريات جديدة. في الأوقات الصعبة، سأتذكر دائمًا أننا معًا، وأن حبنا هو النور الذي يرشدنا في الظلام. سأكون دائمًا هنا لتشجيعك، ودعمك، ولأخبرك أن كل شيء سيكون على ما يرام.
+			<br><br>
+			دعنا نواصل هذا الطريق معًا، لنصنع قصة حب لا تُنسى. لنواجه العالم بشجاعة، ولنجعل من كل لحظة معًا كنزًا. مهما كانت الظروف، نحن معًا، وأنا ممتن لكل لحظة نقضيها معًا.
+			</p>
+    </div>
+    
+    
+<script>
+// <![CDATA[
+var colours = ['#f00', '#f06', '#f0f', '#f6f', '#f39', '#f9c']; // colors of the hearts
 var minisize = 10; // smallest size of hearts in pixels
 var maxisize = 20; // biggest size of hearts in pixels
 var hearts = 100; // maximum number of hearts on screen
-var over_or_under = "over"; // set to "over" for hearts to always be on top, or "under" to allow them to float behind other objects
+var over_or_under = "over"; // set to "over" for hearts to always be on top
 
-var x = ox = 400;
-var y = oy = 300;
-var swide = 800;
-var shigh = 600;
-var sleft = sdown = 0;
+var swide = window.innerWidth;
+var shigh = window.innerHeight;
 var herz = new Array();
 var herzx = new Array();
 var herzy = new Array();
 var herzs = new Array();
-var kiss = false;
 
-if (typeof ('addRVLoadEvent') != 'function') function addRVLoadEvent(funky) {
-  var oldonload = window.onload;
-  if (typeof (oldonload) != 'function') window.onload = funky;
-  else window.onload = function () {
-    if (oldonload) oldonload();
-    funky();
-  }
-}
+window.onload = function() {
+    for (var i = 0; i < hearts; i++) {
+        var heart = createDiv("auto", "auto");
+        heart.className = "heart"; // Add class for styling
+        heart.style.zIndex = (over_or_under == "over") ? "1001" : "0";
+        heart.style.color = colours[i % colours.length];
+        heart.style.pointerEvents = "none";
+        heart.appendChild(document.createTextNode(String.fromCharCode(9829)));
+        document.body.appendChild(heart);
+        herz[i] = heart;
+        herzy[i] = false;
 
-addRVLoadEvent(mwah);
-
-function mwah() {
-  if (document.getElementById) {
-    var i, heart;
-    for (i = 0; i < hearts; i++) {
-      heart = createDiv("auto", "auto");
-      heart.style.visibility = "hidden";
-      heart.style.zIndex = (over_or_under == "over") ? "1001" : "0";
-      heart.style.color = colours[i % colours.length];
-      heart.style.pointerEvents = "none";
-      heart.style.opacity = 0.45;
-      heart.appendChild(document.createTextNode(String.fromCharCode(9829)));
-      document.body.appendChild(heart);
-      herz[i] = heart;
-      herzy[i] = false;
+        // Position hearts randomly and make them appear
+        positionHeart(i);
     }
-    set_scroll();
-    set_width();
-    herzle();
-  }
+    setInterval(animateHearts, 30);
 }
 
-function herzle() {
-  var c;
-  if (Math.abs(x - ox) > 1 || Math.abs(y - oy) > 1) {
-    ox = x;
-    oy = y;
-    for (c = 0; c < hearts; c++) if (herzy[c] === false) {
-      // Set the heart's position randomly around the cursor
-      var randomOffsetX = (Math.random() - 0.5) * 100; // Random offset between -50 and 50 pixels
-      var randomOffsetY = (Math.random() - 0.5) * 100; // Random offset between -50 and 50 pixels
-      
-      herz[c].firstChild.nodeValue = String.fromCharCode(9829);
-      herz[c].style.left = (herzx[c] = x + randomOffsetX - minisize / 2) + "px";
-      herz[c].style.top = (herzy[c] = y + randomOffsetY - minisize) + "px";
-      herz[c].style.fontSize = minisize + "px";
-      herz[c].style.fontWeight = 'normal';
-      herz[c].style.visibility = 'visible';
-      herzs[c] = minisize;
-      break;
+function positionHeart(i) {
+    herz[i].style.left = Math.random() * (swide - minisize) + "px";
+    herz[i].style.top = Math.random() * (shigh - minisize) + "px";
+    herz[i].style.fontSize = minisize + "px";
+    herz[i].style.visibility = "visible";
+    herz[i].style.opacity = 1; // Fade in effect
+    herzy[i] = true;
+
+    // Set initial random movement direction
+    herzx[i] = Math.random() * 2 - 1; // Random horizontal movement (-1 to 1)
+    herzy[i] = Math.random() * 2 - 1; // Random vertical movement (-1 to 1)
+}
+
+function animateHearts() {
+    for (var i = 0; i < hearts; i++) {
+        if (herzy[i]) {
+            blow_me_a_kiss(i);
+        }
     }
-  }
-  for (c = 0; c < hearts; c++) if (herzy[c] !== false) blow_me_a_kiss(c);
-  setTimeout(herzle, 30);
-}
-
-document.onmousedown = pucker;
-document.onmouseup = function () { clearTimeout(kiss); };
-
-function pucker() {
-  ox = -1;
-  oy = -1;
-  kiss = setTimeout('pucker()', 100);
 }
 
 function blow_me_a_kiss(i) {
-  herzy[i] -= herzs[i] / minisize + i % 2;
-  herzx[i] += (i % 5 - 2) / 5;
-  if (herzy[i] < sdown - herzs[i] || herzx[i] < sleft - herzs[i] || herzx[i] > sleft + swide - herzs[i]) {
-    herz[i].style.visibility = "hidden";
-    herzy[i] = false;
-  }
-  else if (herzs[i] > minisize + 1 && Math.random() < 2.5 / hearts) break_my_heart(i);
-  else {
-    if (Math.random() < maxisize / herzy[i] && herzs[i] < maxisize) herz[i].style.fontSize = (++herzs[i]) + "px";
-    herz[i].style.top = herzy[i] + "px";
-    herz[i].style.left = herzx[i] + "px";
-  }
-}
+    // Update position with smooth movement
+    var left = parseFloat(herz[i].style.left);
+    var top = parseFloat(herz[i].style.top);
 
-function break_my_heart(i) {
-  var t;
-  herz[i].firstChild.nodeValue = String.fromCharCode(9676);
-  herz[i].style.fontWeight = 'bold';
-  herzy[i] = false;
-  for (t = herzs[i]; t <= maxisize; t++) setTimeout('herz[' + i + '].style.fontSize="' + t + 'px"', 60 * (t - herzs[i]));
-  setTimeout('herz[' + i + '].style.visibility="hidden";', 60 * (t - herzs[i]));
-}
+    left += herzx[i]; // Update x position
+    top += herzy[i];  // Update y position
 
-document.onmousemove = mouse;
-function mouse(e) {
-  if (e) {
-    y = e.pageY;
-    x = e.pageX;
-  }
-  else {
-    set_scroll();
-    y = event.y + sdown;
-    x = event.x + sleft;
-  }
-}
+    // Change direction if the heart goes off screen
+    if (left < 0 || left > swide) {
+        herzx[i] *= -1; // Reverse direction
+    }
+    if (top < 0 || top > shigh) {
+        herzy[i] *= -1; // Reverse direction
+    }
 
-window.onresize = set_width;
-function set_width() {
-  var sw_min = 999999;
-  var sh_min = 999999;
-  if (document.documentElement && document.documentElement.clientWidth) {
-    if (document.documentElement.clientWidth > 0) sw_min = document.documentElement.clientWidth;
-    if (document.documentElement.clientHeight > 0) sh_min = document.documentElement.clientHeight;
-  }
-  if (typeof (self.innerWidth) == 'number' && self.innerWidth) {
-    if (self.innerWidth > 0 && self.innerWidth < sw_min) sw_min = self.innerWidth;
-    if (self.innerHeight > 0 && self.innerHeight < sh_min) sh_min = self.innerHeight;
-  }
-  if (document.body.clientWidth) {
-    if (document.body.clientWidth > 0 && document.body.clientWidth < sw_min) sw_min = document.body.clientWidth;
-    if (document.body.clientHeight > 0 && document.body.clientHeight < sh_min) sh_min = document.body.clientHeight;
-  }
-  if (sw_min == 999999 || sh_min == 999999) {
-    sw_min = 800;
-    sh_min = 600;
-  }
-  swide = sw_min;
-  shigh = sh_min;
-}
-
-window.onscroll = set_scroll;
-function set_scroll() {
-  if (typeof (self.pageYOffset) == 'number') {
-    sdown = self.pageYOffset;
-    sleft = self.pageXOffset;
-  }
-  else if (document.body && (document.body.scrollTop || document.body.scrollLeft)) {
-    sdown = document.body.scrollTop;
-    sleft = document.body.scrollLeft;
-  }
-  else if (document.documentElement && (document.documentElement.scrollTop || document.documentElement.scrollLeft)) {
-    sleft = document.documentElement.scrollLeft;
-    sdown = document.documentElement.scrollTop;
-  }
-  else {
-    sdown = 0;
-    sleft = 0;
-  }
+    herz[i].style.left = left + "px"; // Update left position
+    herz[i].style.top = top + "px";   // Update top position
 }
 
 function createDiv(height, width) {
-  var div = document.createElement("div");
-  div.style.position = "absolute";
-  div.style.height = height;
-  div.style.width = width;
-  div.style.overflow = "hidden";
-  div.style.backgroundColor = "transparent";
-  return (div);
+    var div = document.createElement("div");
+    div.style.position = "absolute";
+    div.style.height = height;
+    div.style.width = width;
+    div.style.overflow = "hidden";
+    div.style.backgroundColor = "transparent";
+    return div;
 }
-
-
+// ]]>
 </script>
 
 
